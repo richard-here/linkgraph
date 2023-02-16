@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1 Click Analytics
+  table(class="analytics-table")
+    thead
+      tr
+        th Button 
+        th Clicked Amount
+      tbody
+
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js")
+  script.
+    (() => {
+      axios.get(`/analytics`)
+        .then(result => {
+          const data = result.data;
+          const tbody = document.querySelector('tbody');
+          for (let item in data) {
+            const td1 = document.createElement('td');
+            const td2 = document.createElement('td');
+            const tr = document.createElement('tr');
+            td1.innerText = `${item}`;
+            td2.innerText = `${data[item].clicked}`;
+            tbody.append(tr);
+            tr.append(td1);
+            tr.append(td2);
+          }
+        })
+        .catch(error => console.error(error));
+    })();

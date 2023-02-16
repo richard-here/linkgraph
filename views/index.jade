@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  a(href="https://github.com/richard-here" onclick=`handleClick("github")`) Github
+  a(href="https://www.linkedin.com/in/richardhere/" onclick=`handleClick("linkedin")`) LinkedIn
+  a(href="https://stackoverflow.com/users/9060223/richard" onclick=`handleClick("stackoverflow")`) StackOverflow
+  a(href="/view" class="analytics") Analytics
+
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js")
+  script.
+    function handleClick(id) {
+      axios.post(`/analytics/${id}`)
+        .catch(error => console.error(error));
+    }

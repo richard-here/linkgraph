@@ -1,0 +1,32 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  background: #ff0000;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 5px;
+  display: block;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+a.analytics {
+  background: rgb(33, 33, 255);
+}
+
+.analytics-table {
+  width: 50%;
+  min-width: 200px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+}
