@@ -12,7 +12,7 @@ block content
   script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js")
   script.
     (() => {
-      axios.get(`/analytics`)
+      axios.get(`analytics`)
         .then(result => {
           const data = result.data;
           const tbody = document.querySelector('tbody');

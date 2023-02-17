@@ -1,3 +1,5 @@
+# Introduction
+Deployment link: https://us-central1-linkgraph-ef877.cloudfunctions.net/app
 
 # Pemilihan Tech Stack
 Untuk frontend, ada beberapa opsi yang dipertimbangkan:

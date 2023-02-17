@@ -1,11 +1,17 @@
 {
-  "name": "myskill",
-  "version": "0.0.0",
-  "private": true,
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
   "scripts": {
-    "start": "node ./bin/www",
-    "start watch": "./node_modules/nodemon/bin/nodemon.js --watch firebase routes validators views ./bin/www"
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
   },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -19,9 +25,11 @@
     "uglify-js": "^3.17.4"
   },
   "devDependencies": {
+    "firebase-functions-test": "^3.0.0",
     "eslint": "^8.34.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
     "nodemon": "^2.0.20"
-  }
+  },
+  "private": true
 }
